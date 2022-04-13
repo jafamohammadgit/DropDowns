@@ -1,0 +1,333 @@
+@import url(./_font.css);
+/* start css style */
+*,
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 15px;
+  direction: rtl;
+}
+
+.flex {
+  display: flex;
+}
+
+body {
+  overflow: hidden;
+  font-family: mikhak;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+a {
+  text-decoration: none;
+}
+
+li,
+ol,
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.container-fluid {
+  width: 100%;
+}
+
+.container {
+  clear: both;
+  max-width: 1200px !important;
+  margin: 0 auto;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.my-nav {
+  width: 100%;
+  height: 150px;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0px 0px 5px 2px #e1e1e1;
+  border-radius: 5px;
+  margin: 40px 0;
+}
+
+.my-nav > ul {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.my-nav > ul > li {
+  width: 20%;
+  height: 30%;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1x solid #efefef;
+  background-color: rgb(0, 81, 255);
+  border-radius: 6px;
+  position: relative;
+  box-shadow: 0px 3px 18px -2px #004bff;
+  margin: 10px;
+}
+
+.my-nav > ul > li > a {
+  width: 75%;
+}
+
+.my-nav > ul > li > span {
+  width: 25%;
+  border-right: 1px solid #efefef;
+}
+
+.my-nav > ul > li > a,
+.my-nav > ul > li > span {
+  display: inline-block;
+  text-align: center;
+  padding: 10px 0;
+  color: #fff;
+  z-index: 100;
+}
+
+.my-nav ul.inside-menu {
+  position: absolute;
+  width: 100%;
+  background-color: #2e4bff;
+  border-radius: 5px;
+  top: 60px;
+  transition: all 0.5s 0.1s;
+  z-index: 90;
+}
+
+.my-nav ul.inside-menu li {
+  width: 100%;
+  height: 100%;
+  padding: 10px 0;
+  border-bottom: 1px solid #ffffff5e;
+}
+
+.my-nav ul.inside-menu li a {
+  font-family: vazir;
+  font-weight: 500;
+  font-size: 14px;
+  display: block;
+  width: 100%;
+  height: 100%;
+  color: rgb(255, 255, 255);
+}
+
+.inside-menu i {
+  position: absolute;
+  top: -20px;
+  right: 32px;
+  font-size: 31px;
+  color: #2e4bff;
+}
+
+.my-nav ul li span i {
+  border-radius: 100%;
+  animation: ripple 0.9s linear infinite;
+}
+
+@keyframes ripple {
+  0% {
+    box-shadow: 0px 0px 0px 10px rgba(53, 141, 255, 0.37),
+      0px 0px 0px 20px rgba(53, 141, 255, 0.37),
+      0px 0px 0px 30px rgba(53, 141, 255, 0.199);
+  }
+  100% {
+    box-shadow: 0px 0px 0px 20px rgba(53, 141, 255, 0.37),
+      0px 0px 0px 40px rgba(53, 141, 255, 0.158),
+      0px 0px 0px 60px rgba(53, 141, 255, 0);
+  }
+}
+
+/* effect one */
+
+#drop-down-1 > ul.inside-menu {
+  opacity: 0;
+  transform: scale(0.1);
+  top: 0;
+}
+#drop-down-1:hover > ul.inside-menu {
+  opacity: 1;
+  transform: scale(1) rotate(360deg);
+  transition: all 0.5s ease;
+  top: 50px;
+}
+
+/* effect two */
+#drop-down-2 > ul.inside-menu {
+  width: 0;
+  height: 0;
+  opacity: 0;
+  transform: scale(0);
+}
+#drop-down-2 > ul.inside-menu li {
+  transition-delay: 0.3s;
+}
+#drop-down-2:hover > ul.inside-menu {
+  transition: all 0.5s ease;
+  width: 100%;
+  height: 180px;
+  opacity: 1;
+  transform: scale(1);
+}
+#drop-down-2:hover > ul.inside-menu li {
+  height: 45px;
+  width: 100%;
+}
+
+/* effect three */
+
+#drop-down-3 > ul.inside-menu {
+  top: -12px;
+  transform: scaleY(0);
+}
+#drop-down-3 > ul.inside-menu li {
+  transition-delay: 0.3s;
+}
+#drop-down-3 > ul.inside-menu {
+  top: -12px;
+  transform: scaleY(0);
+}
+
+#drop-down-3:hover > ul.inside-menu {
+  top: 50px;
+  transform: scale(1);
+}
+
+/* effect four */
+
+#drop-down-4 > ul.inside-menu {
+  transform: scaleY(0);
+  top: 0;
+  right: 0px;
+}
+#drop-down-4 > ul.inside-menu li {
+  position: relative;
+  transform: scale(0);
+  right: -100px;
+  transition: 0.5s 0.3s;
+}
+#drop-down-4:hover > ul.inside-menu {
+  transition: 0.1s;
+  transform: scale(1);
+  top: 50px;
+  right: 50px;
+}
+#drop-down-4:hover ul.inside-menu li:nth-child(1),
+#drop-down-4:hover ul.inside-menu li:nth-child(2),
+#drop-down-4:hover ul.inside-menu li:nth-child(3),
+#drop-down-4:hover ul.inside-menu li:nth-child(4) {
+  position: relative;
+  transform: scale(1);
+  right: 0;
+  perspective: 500px;
+}
+#drop-down-4:hover ul.inside-menu li:nth-child(1) {
+  transition: 0.2s;
+}
+#drop-down-4:hover ul.inside-menu li:nth-child(2) {
+  transition: 0.4s;
+}
+#drop-down-4:hover ul.inside-menu li:nth-child(3) {
+  transition: 0.6s;
+}
+#drop-down-4:hover ul.inside-menu li:nth-child(4) {
+  transition: 0.8s;
+}
+
+/* effect five */
+#drop-down-5 > ul.inside-menu {
+  transition: 0.5s 0.3s;
+  top: 100px;
+  transform: scaleX(0) translateX(360px);
+  backface-visibility: hidden;
+}
+#drop-down-5:hover > ul.inside-menu {
+  transition: 0.5s;
+  top: 60px;
+  display: block;
+  transform: scale(1) translateX(0px);
+}
+
+/* effect six */
+
+#drop-down-6 > ul.inside-menu > li {
+  display: none;
+}
+
+#drop-down-6 > ul.inside-menu {
+  perspective: 800%;
+  transition: all 0.5s;
+  transform: rotateY(180deg) scale(0);
+}
+#drop-down-6:hover > ul.inside-menu {
+  transform: rotateY(0) scale(1);
+}
+#drop-down-6:hover > ul.inside-menu li {
+  display: block;
+}
+
+/* effect seven */
+#drop-down-7 > ul.inside-menu {
+  right: -287px;
+  transition: all 0.5s ease;
+  transform: scale(0);
+  opacity: 0;
+}
+#drop-down-7:hover > ul.inside-menu {
+  transition: all 0.5s ease;
+  right: 0;
+  transform: scale(1);
+  opacity: 1;
+}
+/* effect eight (markup is defferent) */
+#drop-down-8 > ul.inside-menu {
+  overflow: hidden !important;
+  transform: scale(0);
+  top: -14px;
+  left: -59px;
+}
+#drop-down-8:hover > ul.inside-menu {
+  transition: 0.5s 0.6s;
+  transform: scale(1);
+  top: 54px;
+  left: 0;
+}
+#drop-down-8 > i {
+  transform: translateX(0) rotate(180deg) scale(1);
+  position: absolute;
+  right: 21px;
+  bottom: -19px;
+  font-size: 30px;
+  color: #0051ff;
+  transition: 1s ease;
+}
+#drop-down-8:hover > i {
+  color: #3453ff;
+  transform: translateX(-139px);
+}
+
+/* effect nine */
+li#drop-down-9 > ul {
+  visibility: hidden;
+  transition: all 0.5s ease 0.3s;
+  opacity: 0;
+}
+li#drop-down-9:hover > ul.inside-menu {
+  visibility: visible;
+  transition: all 0.5s ease;
+  top: 70px;
+  opacity: 1;
+}
